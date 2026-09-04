@@ -1,0 +1,2 @@
+"""StockMind analytics application."""
+
