@@ -4,5 +4,7 @@ from pydantic import BaseModel
 class EvaluationResponse(BaseModel):
     mae: float
     rmse: float
-    r2: float
+    wape: float | None
+    r2: float | None
+    reason: str | None = None
 

@@ -9,8 +9,8 @@ router = APIRouter(prefix="/evaluation", tags=["evaluation"])
 
 
 class EvaluationRequest(BaseModel):
-    y_true: list[float] = Field(min_length=2)
-    y_pred: list[float] = Field(min_length=2)
+    y_true: list[float] = Field(min_length=1)
+    y_pred: list[float] = Field(min_length=1)
 
 
 @router.post("/evaluate", response_model=EvaluationResponse)

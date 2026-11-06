@@ -1,8 +1,21 @@
+from datetime import date
+
 from pydantic import BaseModel
 
 
+class WeeklyForecastResponse(BaseModel):
+    week_start: date
+    predicted_demand: float
+
+
 class PredictionResponse(BaseModel):
-    model_name: str
-    prediction: float
-    demand_category: str
+    sku: str
+    cutoff_date: date
+    horizon_weeks: int
+    unit: str
+    method: str
+    model_version: str
+    dataset_version: str
+    status: str
+    forecasts: list[WeeklyForecastResponse]
 
